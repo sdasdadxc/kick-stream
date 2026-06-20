@@ -7,20 +7,15 @@ KICK_SERVER = "rtmps://fa723fc1b171.global-contribute.live-video.net/app/sk_us-w
 
 while True:
     try:
-        print("⚡ Extracting links using bypass techniques...")
+        print("⚡ Extracting links using Cookies bypass...")
         
-        # إعدادات ذكية لتخطي حظر الروبوتات والـ Bot Detection من يوتيوب
         ydl_opts = {
             'format': 'bestvideo[height<=720]+bestaudio/best[height<=720]',
             'quiet': True,
             'noplaylist': True,
-            'extractor_args': {
-                'youtube': {
-                    'player_client': ['ios'], # محاكاة تشغيل من تطبيق آيفون لتخطي حظر السيرفرات
-                }
-            },
+            'cookiefile': 'cookies.txt', # هنا بنخليه يقرا ملف الكوكيز اللي عملناه
             'http_headers': {
-                'User-Agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 16_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.5 Mobile/15E148 Safari/604.1',
+                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
                 'Accept-Language': 'en-US,en;q=0.9',
             }
         }
