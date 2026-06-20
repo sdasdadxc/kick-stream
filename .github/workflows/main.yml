@@ -15,7 +15,7 @@ jobs:
       with:
         python-version: '3.10'
 
-    - name: Install JavaScript Runtime (Fix Deprecated JS Warning)
+    - name: Install JavaScript Runtime
       run: |
         sudo apt-get update
         sudo apt-get install -y nodejs npm
@@ -25,6 +25,9 @@ jobs:
         sudo apt-get install ffmpeg -y
         pip install --upgrade pip
         pip install --upgrade yt-dlp
+
+    - name: Create Cookies File
+      run: echo "${{ secrets.YT_COOKIES }}" > cookies.txt
 
     - name: Run Live Stream
       run: python stream.py
